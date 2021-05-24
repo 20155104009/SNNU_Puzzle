@@ -170,6 +170,7 @@
         "./imgs/img4.jpg",
 
       ]
+	  var FLAG=0
       var EventUtil = {
           addHandler:function(element,type,handler){
             if(element.addEventListener){
@@ -438,8 +439,8 @@
           o.key=4;
           o.changeImg=function(){
             for(var i=0;i<imgs.length;i++){
-              var r=Math.floor(Math.random()*imgs.length);
-              img.src=imgs[r];
+              FLAG=Math.floor(Math.random()*imgs.length);
+              img.src=imgs[FLAG];
             }
           }
           o.startTime=function(totalTime){
@@ -514,10 +515,24 @@
                       var totalTime=timeObject.getTotalTime();
                       var initTime=timeObject.getInitTime();
                       if(check(boxes)&&totalTime>0){
-                        recorder.savaUserRecord(initTime-totalTime,key);
-                        alert("五四运动1919年5月4日，是一场发生于中国北京以青年学生为主的学生运动，以及包括广大群众、市民、工商人士等中下阶层广泛参与的一次示威游行、请愿、罢课、罢工、暴力对抗政府等多形式的爱国运动。 五四运动是中国旧民主主义革命的结束和新民主主义革命的开端。");  
-					
-				
+						    recorder.savaUserRecord(initTime-totalTime,key);
+					        if(FLAG==0){
+								alert("计科院学生第三党支部欢迎您！！")
+						 
+							     
+						    }else if(FLAG==1){
+								alert("五四运动1919年5月4日，是一场发生于中国北京以青年学生为主的学生运动，以及包括广大群众、市民、工商人士等中下阶层广泛参与的一次示威游行、请愿、罢课、罢工、暴力对抗政府等多形式的爱国运动。 五四运动是中国旧民主主义革命的结束和新民主主义革命的开端。");  
+							}else if(FLAG==2){
+								alert("抗美援朝，又称抗美援朝运动或抗美援朝战争，是20世纪50年代初爆发的朝鲜战争的一部分，仅指中国人民志愿军参战的阶段，也包括中国人民支援朝鲜人民抗击美国侵略的群众性运动。");
+							}else if(FLAG==3){
+								alert("抗日战争（War of Resistance against Japan），简称抗战，指20世纪中期第二次世界大战中，中国抵抗日本侵略的一场民族性的全面战争。国际上称作第二次中日战争（Second Sino-Japanese War）、 日本侵华战争（Japanese War of Aggression against China）。抗战时间从1931年9月18日九一八事变开始算起，至1945年9月2日结束，共14年抗战。");
+							}else if(FLAG==4){
+								alert("中国共产党领导全国各族人民，推翻了压在人民头上的帝国主义、封建主义和官僚资本主义三座大山，取得新民主主义革命的胜利并建立了中华人民共和国，新中国的成立，开辟了中国历史的新纪元，从此，中国结束了一百多年来被侵略被奴役的屈辱历史，真正成为了独立自主的国家，中国人民从此站起来了，成为国家的主人。壮大了世界和平、民主和社会主义的力量，鼓舞了世界被压迫民族和被压迫人民争取解放的斗争。");
+						    
+							}
+					  
+                       
+				      }
 					
 
 					   }else if(totalTime==0){
